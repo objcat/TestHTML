@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+<form action="../Day1/作业.html" autocomplete="on" method="post" id="postForm">
+    <p>用户名:<input type="text" placeholder="请输入用户名" name="username" value="yonghuming"></p>
+    <p>密码:<input type="password" placeholder="请输入密码" name="password" value="mima"></p>
+    <p>复选框<input type="checkbox">爬山<input type="checkbox">游泳<input type="checkbox">跑步</p>
+    <hr>
+    <p><input type="submit" value="按钮"></p>
+    <input type="button" value="jspost" id="postButton">
+    <hr>
+
+    <!--name相同才能单选-->
+    <p>单选框<input type="radio" name="123"><input type="radio" name="123"><input type="radio" name="123"><input type="radio"></p>
+
+    <hr>
+
+    <!--上传文件-->
+    <p><input type="file">上传文件</p>
+
+    <!--重置按钮-->
+    <p><input type="reset" value="重置11"></p>
+
+    <!--隐藏域-->
+    <p><input type="hidden"></p>
+
+    <!--设置不可用状态-->
+    <p><input type="text" placeholder="不可用" disabled="disabled"></p>
+
+    <hr>
+
+    <!--label关联表单 前提条件for下面与表单控件ID相同-->
+    <input type="radio" name="six" id="man"><label for="man">男</label>
+    <input type="radio" name="six" id="women"><label for="women">女</label>
+
+    <hr>
+
+    <!--下拉列表-->
+    <select name="" id="" autofocus="autofocus"> <!-- autofocus 自动获得焦点 -->
+        <option value="">北京</option>
+        <option value="">天津</option>
+        <option value="">上海</option>
+    </select>
+    
+    <hr>
+
+    <!--文本框-->
+    <textarea cols="30" rows="10" placeholder="请输入信息"></textarea>
+
+
+</form>
+
+
+<script type="text/javascript">
+    var postButton = document.getElementById("postForm");
+    // var form = document.getElementById("postForm");
+    var form = document.getElementsByTagName('form')[0];
+   postButton.onclick = function (ev) {
+       form.submit();
+   }
+</script>
+</body>
+</html>

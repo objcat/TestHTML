@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM操作点击改变颜色</title>
+    <style type="text/css">
+        .testDiv {
+            width: 100px;
+            height: 100px;
+            /*background-color: red;*/
+            float: left;
+            margin: 0 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 先创建三个标签 -->
+    <div class="testDiv"></div>
+    <div class="testDiv"></div>
+    <div class="testDiv"></div>
+
+    <!-- 开始编写js代码 -->
+    <script type="text/javascript">
+        //获取所有的div标签
+        var divs = document.getElementsByTagName('div');
+        for (var i = 0; i < divs.length; i++) {
+            var div = divs[i];
+            //div添加点击方法
+            div.onclick = function () {
+                //把所有方块设置为白色
+                for (var j = 0; j < divs.length; j++) {
+                    divs[j].style.backgroundColor = 'white';
+                }
+                //把点击的方块设置为绿色
+                this.style.backgroundColor = 'green';
+            }
+        }
+    </script>
+</body>
+</html>

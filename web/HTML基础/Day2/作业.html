@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿百度登录界面</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            /*background-color: yellow;*/
+            width: 100%;
+            height: 75px;
+        }
+
+        .wrap {
+            /*background-color: black;*/
+            width: 980px;
+            height: 75px;
+            margin: 0 auto;
+        }
+
+        .shadow {
+            height: 30px;
+            width: 1200px;
+            background: url("https://passport.baidu.com/static/passpc-account/img/reg/reg_hr.png");
+            background-repeat: no-repeat;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: block;
+            width: 330px;
+            height: 75px;
+            color: #666666;
+            text-decoration: none;
+            font-size: 1em;
+            /*background-color: green;*/
+        }
+
+        .login {
+            display: flex;
+            position: relative;
+            left: 818px;
+            top: -38px;
+            width: 185px;
+            /*background-color: red;*/
+        }
+
+        .loginButton {
+            /*display: inline-block;*/
+            width: 64px;
+            height: 32px;
+            background-color: #f7f7f7;
+            color: #666695;
+            border: 1px solid #dddddd;
+            outline: none;
+            float: right;
+        }
+
+        .loginButton:active {
+            background-color: lightgray;
+        }
+
+        .content {
+            width: 980px;
+            height: 448px;
+            /*background-color: red;*/
+            margin: 0 auto;
+        }
+
+        .mainForm span {
+            display: inline-block;
+            font-size: 1em;
+            font-weight: bold;
+            /*background-color: red;*/
+            width: 70px;
+            text-align: right;
+        }
+
+        .testInput {
+            height: 40px;
+            width: 350px;
+            border: 1px solid #dddddd;
+            text-indent: 10px;
+            color: #666666
+        }
+
+        .agreementP {
+            /*display: inline-block;*/
+            font-size: 0.5em;
+            /*background-color: red;*/
+            left: 24px;
+        }
+
+        .submitp input {
+            background-color: #3f89ec;
+            outline: none;
+            margin-left: 33px;
+        }
+
+        .submitp input:link {
+            background-color: #3f89ec;
+        }
+
+        .submitp input:hover {
+            background-color: #3a84e8;
+        }
+
+        table {
+            margin: 100px auto;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="wrap">
+        <a class="logo" href="#">
+            <img src="https://passport.baidu.com/static/passpc-base/img/logo/baidu.gif" style="margin-top: 22px"
+                 alt="logo">
+            <span style="display: inline;position: relative;bottom: 7px;">| 注册百度账号</span>
+        </a>
+        <div class="login"><span style="font-size: 0.8em;color: #666666; position: relative;top: 10px">我已注册,现在就</span>&nbsp&nbsp
+            <button class="loginButton">登录</button>
+        </div>
+    </div>
+</header>
+
+<!--阴影-->
+<div class="shadow">
+
+</div>
+
+<div class="content">
+
+    <form style="margin: 0;padding: 0" class="mainForm" onsubmit="return check()">
+        <p align="center" style="position: relative;top: 40px"><span>用户名&nbsp&nbsp</span><input type="text"
+                                                                                                class="testInput"
+                                                                                                placeholder="请输入用户名">
+        </p>
+        <p align="center" style="position: relative;top: 60px"><span>密码&nbsp&nbsp</span><input type="password"
+                                                                                               class="testInput"
+                                                                                               placeholder="请输入密码"></p>
+        <p align="center" style="position: relative;top: 80px"><span>手机号&nbsp&nbsp</span><input type="text"
+                                                                                                class="testInput"
+                                                                                                placeholder="请输入手机号">
+        </p>
+        <p align="center" style="position: relative;top: 100px;"><span>验证码&nbsp&nbsp</span><input type="text"
+                                                                                                  class="testInput"
+                                                                                                  placeholder="请输入验证码"
+                                                                                                  style="width: 172px">
+            <!--<button style="width: 160px;height: 40px;margin-left: 12px" onclick="" type="button">点击获取验证码</button></p>-->
+            <input type="button" style="width: 160px;height: 40px;margin-left: 12px" value="点击获取验证码"/>
+        <p align="center" class="agreementP" style="position: relative;top: 120px"><input type="checkbox"
+                                                                                          id="submitCheckBox"
+                                                                                          style="position: relative;top: 3px;right: 5px"><label for="submitCheckBox">阅读并接受</label>
+            <a href="http://passport.baidu.com/static/passpc-account/html/protocal.html" target="_blank"
+               style="text-decoration: none">《百度用户协议》</a>及 <a href="https://www.baidu.com/duty/yinsiquan.html"
+                                                              target="_blank"
+                                                              style="text-decoration: none">《百度隐私权保护声明》</a></p>
+        <br>
+        <p align="center" style="position: relative;top: 120px;left: 20px" class="submitp"><input type="submit" id="submitInput"
+                                                                                       value="提交"
+                                                                                       style="height: 50px;width: 350px;color: white;font-size: 1em;text-shadow: none;border: 0;">
+        </p>
+    </form>
+
+</div>
+
+
+<script type="text/javascript">
+    var a = document.getElementsByTagName('a')[0];
+    a.onclick = function () {
+        alert('欢迎检查objcat的作业')
+    }
+    // button.onclick = function () {
+    //     alert('登录成功');
+    // }
+
+    var checkBox = document.getElementById('submitCheckBox');
+    var userName = document.getElementsByTagName('input')[0];
+    var password = document.getElementsByTagName('input')[1];
+    var phone = document.getElementsByTagName('input')[2];
+    var checkcode = document.getElementsByTagName('input')[3];
+    var checkcodeButton = document.getElementsByTagName('input')[4];
+    var body = document.getElementsByTagName('body')[0];
+    var loginButton = document.getElementsByClassName('loginButton')[0];
+
+
+    loginButton.onclick = function () {
+        alert("请先注册");
+    }
+
+    checkcodeButton.onclick = function () {
+        if (phone.value.length <= 0) {
+            alert("请填写手机号");
+            return;
+        }
+        alert("滴滴滴:  验证码为6666");
+    }
+
+
+    function check() {
+
+        if (userName.value.length <= 0) {
+            alert("用户名不能为空");
+            return false;
+        }
+
+        if (password.value.length <= 0) {
+            alert("密码不能为空");
+            return false;
+        }
+
+        if (phone.value.length <= 0) {
+            alert("手机号不能为空");
+            return false;
+        }
+
+        if (checkcode.value <= 0) {
+            alert("验证码不能为空");
+            return false;
+        }
+
+        if (checkBox.checked == false) {
+            alert("您没有勾选用户协议");
+            return false;
+        }
+
+
+        body.innerHTML = "";
+
+        var div = document.createElement('div');
+        div.style.margin = "0 auto";
+        div.style.width = "980px";
+        div.style.height = "448px";
+        div.style.marginTop = "200px";
+        body.appendChild(div);
+
+        div.innerText = "注册成功";
+        div.style.lineHeight = "448px";
+        div.style.fontSize = "3em";
+        div.style.textAlign = "center";
+        div.style.backgroundColor = "green";
+        div.style.color = "white";
+
+
+        return false;
+    }
+
+</script>
+
+
+<hr>
+
+
+
+<table border="1px" cellpadding="0" cellspacing="0" align="center" width="800px">
+
+    <thead>
+
+    <tr align="center" style="background-color: #bfbfbf">
+        <th colspan="7">员工信息表</th>
+    </tr>
+
+
+    <tr align="center">
+        <th>员工号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>身高</th>
+        <th>工资</th>
+        <th>备注</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr align="center">
+        <td>001</td>
+        <td>张三</td>
+        <td>18</td>
+        <td>男</td>
+        <td>175</td>
+        <td>1k</td>
+        <td>1221312323</td>
+    </tr>
+
+    <tr align="center">
+        <td>002</td>
+        <td>李四</td>
+        <td>18</td>
+        <td>男</td>
+        <td>175</td>
+        <td>10k</td>
+        <td>123</td>
+    </tr>
+
+    <tr align="center">
+        <td>003</td>
+        <td>王五</td>
+        <td>18</td>
+        <td>男</td>
+        <td>175</td>
+        <td>9k</td>
+        <td>55</td>
+    </tr>
+
+    <tr align="center">
+        <td>004</td>
+        <td>赵六</td>
+        <td>18</td>
+        <td>男</td>
+        <td>175</td>
+        <td>8k</td>
+        <td>11111</td>
+    </tr>
+
+    <tr align="center">
+        <td>005</td>
+        <td>objcat</td>
+        <td>23</td>
+        <td>男</td>
+        <td>158</td>
+        <td>0.1k</td>
+        <td>123</td>
+    </tr>
+
+    </tbody>
+
+</table>
+
+</body>
+</html>

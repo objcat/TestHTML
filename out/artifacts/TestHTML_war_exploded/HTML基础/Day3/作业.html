@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/test.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>objcat作业</title>
+    <style>
+
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ol li {
+
+        }
+
+        ol li strong {
+            font-size: 1.5em;
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+
+        p {
+            font-size: 1.5em;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<ol>
+    <li>
+        <strong style="display: block;">1.分别用三种不同的CSS使用方法进行页面元素的样式渲染 （可任意创建元素）</strong>
+        <div style="height: 100px">
+            <div style="width: 100px;height: 100px;float: left;background-color: green">
+                行内样式渲染div
+            </div>
+            <div class="div2">2.内部样式渲染div</div>
+            <div class="div3" style="width: 200px;height: 100px;float: left;background-color: yellow">3.外部样式渲染div - 由于单文件无法引入外部样式 这里用行内样式代替外部样式 = = , 请查看源文件中 存在link的外部test.css</div>
+        </div>
+    </li>
+
+    <hr>
+
+    <li class="li2"><strong>2.写出CSS的优先级的关系</strong><br>
+        <p>引入优先级关系: 行内样式 > 外部样式 = 内部样式 > 引入样式</p>
+    <li>
+    <hr>
+        <strong>3.写出CSS常用选择器的种类</strong><br>
+        <p>
+        <ol style="font-size: 1.5em;list-style: decimal;margin-left: 50px">
+            <li>#id选择器</li>
+            <li>.class选择器</li>
+            <li>tag标签选择器 选择单个标签</li>
+            <li>后代选择器 div span {} div中有一个span</li>
+            <li>子元素选择器 div>span{} 能选择自己的所有儿子 不能选择孙子</li>
+            <li>分组选择器 p,li,a,span {} 可以一次性选择多个标签</li>
+            <li>相邻兄弟选择器 div+div {}</li>
+            <li>伪类选择器<br>
+                <ol style="list-style: decimal;margin-left: 40px;">
+                    <li>伪类选择器 a:link{} 点击之前</li>
+                    <li>伪类选择器 a:visited{} 点击之后</li>
+                    <li>伪类选择器 a:hover{} 鼠标放上去时</li>
+                    <li>伪类选择器 a:active{} 鼠标按下去之后</li>
+                </ol>
+            </li>
+            <li>伪元素选择器 <br>
+                <ol style="list-style: decimal;margin-left: 40px;">
+                    <li>伪元素选择器 div::before{} 在标签之前</li>
+                    <li>伪元素选择器 a::after{} 在标签之后 经常用于清除浮动</li>
+                </ol>
+            </li>
+            <li>通用选择器: 可以选择页面上所有的元素 一起改变样式</li>
+        </ol>
+
+        </p>
+        <p style="color: red">选择器优先级: !important > 行内样式 > #id > .class > 标签 > 通配符</p>
+    <br><br><br><br><br><br>
+    </li>
+</ol>
+</body>
+</html>

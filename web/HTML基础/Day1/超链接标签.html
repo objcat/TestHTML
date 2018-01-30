@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接</title>
+    <style>
+        a {
+            font-size: 2em;
+        }
+
+        .awrap a {
+            text-decoration: none;
+            padding: 0 10px 0 10px;
+        }
+
+        .awrap a:link {
+            color: black;
+        }
+
+        .awrap a:visited {
+            color: black;
+        }
+
+        .awrap a:hover {
+            color: white;
+            background-color: #f40;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<h1 align="center" style="color: red">超链接</h1>
+    <!--
+    a标签超级链接 href是跳转的网址
+     target定义打开方式 _blank新窗口下打开
+     -->
+    <a href="http://www.baidu.com" target="_blank">百度一下</a><br>
+    <a href="文本标签.html" target="_blank">本地文件跳转</a>
+
+    <!--相对路径 相对于当前文件的位置  href="test.html" -->
+    <!--绝对路径 含有本地盘符的路径 href="c://test.html"-->
+
+    <h2 style="color: red">../表示上级目录</h2>
+    <h2 style="color: red">/表示当前目录</h2>
+
+
+    <hr>
+
+    <h1 align="center" style="color: red">锚点链接</h1>
+
+<div class="awrap" align="center">
+    <a href="#demo1">1</a>
+    <a href="#demo2">2</a>
+    <a href="#demo3">3</a>
+    <a href="#demo4">4</a>
+    <a href="#demo5">5</a>
+</div>
+
+<ul>
+    <li id="demo1" style="width: 200px;height: 400px;background-color: red"></li>
+    <li id="demo2" style="width: 200px;height: 400px;background-color: blue"></li>
+    <li id="demo3" style="width: 200px;height: 400px;background-color: green"></li>
+    <li id="demo4" style="width: 200px;height: 400px;background-color: yellow"></li>
+    <li id="demo5" style="width: 200px;height: 400px;background-color: pink"></li>
+</ul>
+
+
+
+
+
+
+
+
+</body>
+</html>

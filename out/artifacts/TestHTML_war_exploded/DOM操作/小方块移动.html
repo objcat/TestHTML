@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小方块移动</title>
+    <style type="text/css">
+        .testDiv {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="testDiv"></div>
+<script type="text/javascript">
+
+    //获取div  不设置position top left 均不可以移动小方块
+    var div = document.getElementsByClassName('testDiv')[0];
+    div.style.position = 'absolute';
+    div.style.top = 0;
+    div.style.left = 0;
+    div.style.margin = '10px 10px 10px 10px';
+    var speed = 10;
+
+    //监听键盘按下
+    document.onkeydown = function (ev) {
+        switch (ev.code) {
+            case 'ArrowUp':
+                console.log('上');
+                div.style.top = parseInt(div.style.top) - speed + 'px';
+                break;
+            case 'ArrowDown':
+                console.log('下');
+                div.style.top = parseInt(div.style.top) + speed + 'px';
+                break;
+            case 'ArrowLeft':
+                console.log('左');
+                div.style.left = parseInt(div.style.left) - speed + 'px';
+                break;
+            case 'ArrowRight':
+                div.style.left = parseInt(div.style.left) + speed + 'px';
+                console.log('右');
+                break;
+        }
+    }
+</script>
+</body>
+</html>

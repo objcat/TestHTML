@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+}
+/*解决浏览器的兼容性问题
+margin 外边距 盒子与他外边元素的距离
+margin 上下 左右; auto自动填充*/
+
+.snakeConvas {
+    display: block;
+    /*background-color: red;*/
+    /*只有块级元素才能使用auto*/
+    margin: 150px auto;
+    border: 10px solid #6aabe6;
+}

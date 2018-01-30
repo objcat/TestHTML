@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+    <link rel="stylesheet" href="css/snake.css">
+</head>
+<body>
+
+
+<!--画板  为什么450不加px - > 写在标签里的叫属性 属性不等于样式-->
+<canvas class="snakeConvas" width="450" height="450" id="canvas">
+    <!--canvas绘制网格线-->
+    <script type="text/javascript">
+        //拿到画板
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        //设置线条颜色
+        ctx.strokeStyle = "black";
+        var snake = [];
+        //开始绘制 两点确定一个线段 坐标
+        var snakeLength = 6;
+        //初始化蛇移动的方向
+        var toGo = 3;
+
+        var foodX = 0;
+        var foodY = 0;
+
+        window.onload = function (ev) {
+
+            //监听键盘
+            listenerKeyboard();
+
+            //初始化数据
+            start();
+
+            //画表格和蛇
+            drawRect();
+
+
+
+            setInterval(move, 150);
+        }
+
+
+        function drawRect() {
+            //绘制表格
+            for (var i = 0; i < 31; i++) {
+
+                //花竖线
+                //开始路径
+                ctx.beginPath();
+                //起点
+                ctx.moveTo(15 * i, 0);
+                //终点
+                ctx.lineTo(15 * i, 450);
+                //结束路径
+                ctx.closePath();
+                //连接
+                ctx.stroke();
+
+                //画横线
+                //开始路径
+                ctx.beginPath();
+                //起点
+                ctx.moveTo(0, 15 * i);
+                //终点
+                ctx.lineTo(450, 15 * i);
+                //结束路径
+                ctx.closePath();
+                //连接
+                ctx.stroke();
+            }
+            // 绘制蛇的身体
+            for (var j = 0; j < snakeLength; j++) {
+                var x = snake[j].x;
+                var y = snake[j].y;
+
+                ctx.fillStyle = "black";
+
+                if (j === snakeLength - 1) {
+                    ctx.fillStyle = "green";
+                }
+
+                ctx.fillRect(x, y, 15, 15);
+            }
+
+            addFood();
+        }
+
+        function start() {
+            for (var i = 0; i < snakeLength; i++) {
+                snake[i] = {x: 15*i, y: 0};
+            }
+        }
+
+        function move() {
+                switch (toGo) {
+                case 1:
+                    snake.push({x:snake[snakeLength - 1].x - 15, y: snake[snakeLength - 1].y});
+                    console.log('上');
+                    break;
+                case 2:
+                    snake.push({x:snake[snakeLength - 1].x, y: snake[snakeLength - 1].y - 15});
+                    console.log('下');
+                    break;
+                case 3:
+                    snake.push({x:snake[snakeLength - 1].x + 15, y: snake[snakeLength - 1].y});
+                    console.log('左');
+                    break;
+                case 4:
+                    snake.push({x:snake[snakeLength - 1].x, y: snake[snakeLength - 1].y + 15});
+                    console.log('右');
+                    break;
+                }
+                    snake.shift();
+                    ctx.clearRect(0, 0, 450, 450);
+                    // isEat();
+                    drawRect();
+            }
+
+
+        function listenerKeyboard() {
+            //监听键盘按下
+            document.onkeydown = function (ev) {
+                switch (ev.keyCode) {
+                    case 37:
+                        toGo = 1;
+                        move();
+                        break;
+                    case 38:
+                        toGo = 2;
+                        move();
+                        break;
+                    case 39:
+                        toGo = 3;
+                        move();
+                        break;
+                    case 40:
+                        toGo = 4;
+                        move();
+                        break;
+                }
+            }
+        }
+
+
+        function  addFood() {
+            //向下取整
+            foodX = Math.floor((Math.random() * 30) * 15);
+            foodY = Math.floor((Math.random() * 30) * 15);
+
+            for (var i = 0; i < snakeLength; i++) {
+                if (foodX === snake[i].x && foodY === snake[i].y) {
+                    addFood();
+                }
+            }
+
+            ctx.fillRect(foodX, foodY, 15, 15);
+        }
+
+
+        function  isEat() {
+            if (snake[snakeLength - 1].x === foodX && snake[snakeLength - 1].y === foodY) {
+                addFood();
+                snakeLength++;//吃到食物  蛇的长度+1
+                snake.unshift({x: -15, y: -15}); //增加蛇的长度
+            }
+        }
+
+    </script>
+</canvas>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>CSS四种引入方式</title>
+    <style>
+
+        /*导入样式 不推荐使用 会造成问题*/
+        /*@import "css/四种使用方式.css";*/
+
+        /*内部样式*/
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red
+        }
+
+    </style>
+
+    <!--外部样式-->
+    <link rel="stylesheet" href="css/四种使用方式.css">
+
+</head>
+
+
+<!--优先级-->
+
+
+<body>
+<!--行内样式-->
+<!--<div style="width: 100px; height: 100px; background-color: red"></div>-->
+<p>优先级: 行内样式 > 内部样式 = 外部样式 > 导入样式</p>
+<div></div>
+
+</body>
+</html>

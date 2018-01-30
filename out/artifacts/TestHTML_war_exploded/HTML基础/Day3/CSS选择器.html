@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+
+    <style>
+
+
+        /*div {*/
+        /*width: 200px;*/
+        /*height: 200px;*/
+        /*background-color: red;*/
+        /*}*/
+
+        /*!*类选择器*!*/
+
+        /*.div {*/
+        /*background-color: orange;*/
+        /*}*/
+
+        /*!*id选择器*!*/
+
+        /*#div {*/
+        /*background-color: yellow;*/
+        /*}*/
+
+        /*!*后代选择器*!*/
+
+        /*div span {*/
+        /*font-size: 30px;*/
+        /*color: blue;*/
+        /*}*/
+
+        /*!*子元素选择器 只选择自己的儿子 不选择孙子*!*/
+
+        /*.outer>span {*/
+        /*background-color: green;*/
+        /*}*/
+
+        /*!*分组选择器 - 一次性处理多个元素*!*/
+
+        /*div,*/
+        /*span {*/
+        /*background-color: purple;*/
+        /*}*/
+
+        /*!* 相邻兄弟选择器 *!*/
+
+        /*span+div {*/
+        /*background-color: #ff4400;*/
+        /*}*/
+
+        /*!* 伪类选择器 *!*/
+
+        /*a:link {*/
+        /*background-color: white;*/
+        /*}*/
+
+        /*a:visited {*/
+        /*background-color: aqua;*/
+        /*}*/
+
+        /*a:hover {*/
+        /*background-color: yellow;*/
+        /*}*/
+
+        /*a:active {*/
+        /*background-color: green;*/
+        /*}*/
+
+        /*ul li:nth-child(1) {*/
+        /*background-color: red;*/
+        /*}*/
+
+        /*ul li:nth-child(3) {*/
+        /*background-color: green;*/
+        /*}*/
+
+        /*input:disabled {*/
+        /*width: 100px;*/
+        /*height: 100px;*/
+        /*}*/
+
+        /*input:checked {*/
+        /*width: 200px;*/
+        /*height: 200px;*/
+        /*}*/
+
+        .selector_ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<ul class="selector_ul">
+    <li>
+        <h1>1.标签选择器</h1>
+        <p>直接使用id进行选择 会选择到页面上所有的div</p>
+        <xmp>
+            <style>
+                div {
+                    width: 100px;
+                    height: 100px;
+                    background-color: red;
+                }
+            </style>
+
+            <div>我是标签选择器选择的div</div>
+        </xmp>
+
+        <h2>例如:</h2>
+
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+
+        <div>我是标签选择器选择的div</div>
+
+    </li>
+
+    <li>
+        <h1>2.id选择器</h1>
+        <p>直接使用id进行选择 因为id是唯一的 所以只会选择到一个div</p>
+
+        <xmp>
+            <style>
+                #testDiv {
+                    width: 100px;
+                    height: 100px;
+                    background-color: green;
+                }
+            </style>
+
+
+            <div id="testDiv">我是id选择器选择的div</div>
+        </xmp>
+
+        <h2>例如:</h2>
+
+
+        <style>
+            #testDiv {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+            }
+        </style>
+
+
+        <div id="testDiv">我是id选择器选择的div</div>
+
+    </li>
+
+    <li>
+        <h1>3.类选择器</h1>
+        <p>直接使用class进行选择 会选择到页面上所有的div</p>
+
+        <xmp>
+            <style>
+                .testClass {
+                    width: 100px;
+                    height: 100px;
+                    background-color: black;
+                }
+            </style>
+
+
+            <div class="testClass">我是class选择器选择的div</div>
+        </xmp>
+
+        <h2>例如:</h2>
+
+
+        <style>
+            .testClass {
+                width: 100px;
+                height: 100px;
+                background-color: black;
+                color: white;
+            }
+        </style>
+
+
+        <div class="testClass">我是class选择器选择的div</div>
+
+    </li>
+
+
+    <li>
+        <h1>4.后代选择器</h1>
+
+        <p>父标签可以选择自己包括所有标签 子标签 孙子标签 重孙子标签 .... </p>
+
+        <xmp>
+            <style>
+                div span {
+                    background-color: green;
+                }
+            </style>
+
+            <div style="width: 100px;height: 100px;background-color: red">我是父div
+                <br>
+                <span>我是子span</span>
+            </div>
+        </xmp>
+
+        <h2>例如:</h2>
+
+
+        <style>
+            div span {
+            background-color: green;
+            }
+        </style>
+
+        <div style="width: 100px;height: 100px;background-color: red">我是父div
+            <br>
+            <span>我是子span</span>
+        </div>
+
+    </li>
+
+
+    <li>
+        <h1>5.子元素选择器</h1>
+
+        <p>只能选择自己的儿子 不能选择孙子</p>
+
+        <xmp>
+            <style>
+                div span {
+                    background-color: black;
+                }
+            </style>
+
+            <div style="width: 200px;height: 200px;background-color: red">我是父div
+                <br>
+                <span>我是子span</span>
+                <div style="width: 100px;height: 100px;background-color: yellow">我是子div
+                    <span>我是孙子span</span>
+                </div>
+
+            </div>
+        </xmp>
+
+        <h2>例如:</h2>
+
+
+        <style>
+            div>span {
+                background-color: green;
+            }
+        </style>
+
+        <div style="width: 200px;height: 200px;background-color: red">我是父div
+            <br>
+            <span>我是子span</span>
+            <section style="width: 100px;height: 100px;background-color: yellow">我是子div
+                <span>我是孙子span</span>
+            </section>
+
+        </div>
+
+    </li>
+
+
+    <!--<li>-->
+        <!--<h1>4.兄弟选择器</h1>-->
+
+        <!--<p>父标签可以选择自己的子标签</p>-->
+
+        <!--<xmp>-->
+            <!--<style>-->
+                <!--div span {-->
+                    <!--background-color: yellow;-->
+                <!--}-->
+            <!--</style>-->
+
+            <!--<div style="width: 100px;height: 100px;background-color: red">我是父div-->
+                <!--<br>-->
+                <!--<span>我是子span</span>-->
+            <!--</div>-->
+        <!--</xmp>-->
+
+        <!--<h2>例如:</h2>-->
+
+
+        <!--<style>-->
+            <!--div span {-->
+                <!--background-color: yellow;-->
+            <!--}-->
+        <!--</style>-->
+
+        <!--<div style="width: 100px;height: 100px;background-color: red">我是父div-->
+            <!--<br>-->
+            <!--<span>我是子span</span>-->
+        <!--</div>-->
+
+    <!--</li>-->
+
+
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+
+</html>
