@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>objcat作业</title>
+    <style>
+
+        ol li {
+            font-size: 1em;
+        }
+
+        .table1 {
+            font-size: .8em;
+            border-color: #aaa;
+            border-color: gray;
+        }
+
+        .table1 th {
+            text-indent: 10px;
+        }
+
+        .table1 tr td {
+            font-size: 1.2em;
+            height: 30px;
+            text-indent: 10px;
+            border: 1px solid #aaa;
+            font-family: PingFangSC-Regular, serif;
+        }
+
+        .th1 {
+            width: 300px;
+            height: 30px;
+            background-color: #3f3f3f;
+            color: white;
+        }
+
+        .th2 {
+            width: 800px;
+            background-color: #3f3f3f;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<h1 align="center">objcat作业</h1>
+<ol>
+    <li>列举出CSS常见的文本属性<br>
+        <ol>
+            <li>color 字体颜色<br>
+                <table cellspacing="0" class="table1">
+                    <tr>
+                        <th class="th1">值</th>
+                        <th class="th2">描述</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                       <xmp><td style="color: red">红色的文本</td></xmp>
+
+                        </td>
+                        <td style="color: red">红色的文本</td>
+                    </tr>
+                </table>
+            </li>
+            <li>line-height 行间距
+                <table cellspacing="0" class="table1">
+                    <tr>
+                        <th class="th1">值</th>
+                        <th class="th2">描述</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <xmp><td style="line-height: 100px">行间距 有没有发现我比被人高很多</td></xmp>
+
+                        </td>
+                        <td style="line-height: 100px">行间距 有没有发现我比被人高很多</td>
+                    </tr>
+                </table>
+            </li>
+            <li>text-indent 文本缩进
+                <table cellspacing="0" class="table1">
+                    <tr>
+                        <th class="th1">值</th>
+                        <th class="th2">描述</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <xmp><td style="text-indent: 100px">文本缩进</td></xmp>
+
+                        </td>
+                        <td style="text-indent: 100px">文本缩进 有没有发现我缩进了</td>
+                    </tr>
+                </table>
+            </li>
+            <li>text-decoration 文字修饰
+                <table cellspacing="0" class="table1">
+                    <tr>
+                        <th class="th1">值</th>
+                        <th class="th2">描述</th>
+                    </tr>
+
+                    <tr>
+                        <td>none</td>
+                        <td style="text-decoration: none">默认。定义标准的文本。</td>
+                    </tr>
+
+                    <tr>
+                        <td>underline</td>
+                        <td style="text-decoration: underline">定义文本下的一条线。</td>
+                    </tr>
+
+                    <tr>
+                        <td>overline</td>
+                        <td style="text-decoration: overline">定义文本上的一条线。</td>
+                    </tr>
+
+                    <tr>
+                        <td>line-through</td>
+                        <td style="text-decoration: line-through">定义穿过文本下的一条线。</td>
+                    </tr>
+
+                    <tr>
+                        <td>blink</td>
+                        <td style="text-decoration: blink">定义闪烁的文本。</td>
+                    </tr>
+
+                    <tr>
+                        <td>inherit</td>
+                        <td style="text-decoration: inherit">规定应该从父元素继承 text-decoration 属性的值。</td>
+                    </tr>
+                </table>
+            </li>
+            <li>text-transform 属性控制文本的大小写
+                <table cellspacing="0" class="table1">
+                    <tr>
+                        <th class="th1">值</th>
+                        <th class="th2">描述</th>
+                    </tr>
+
+                    <tr>
+                        <td>none</td>
+                        <td style="text-transform: none">默认。定义带有小写字母和大写字母的标准的文本。aaa</td>
+                    </tr>
+
+                    <tr>
+                        <td>uppercase</td>
+                        <td style="text-transform: capitalize">文本中的每个单词以大写字母开头。aaa</td>
+                    </tr>
+
+                    <tr>
+                        <td>lowercase</td>
+                        <td style="text-transform: uppercase">定义仅有大写字母。aaa</td>
+                    </tr>
+
+                    <tr>
+                        <td>line-through</td>
+                        <td style="text-transform: lowercase">定义无大写字母，仅有小写字母。aaa</td>
+                    </tr>
+
+                    <tr>
+                        <td>inherit</td>
+                        <td style="text-transform: inherit">规定应该从父元素继承 text-transform 属性的值。aaa</td>
+                    </tr>
+                </table>
+            </li>
+            <li>white-space 处理空格
+                <table cellspacing="0" class="table1">
+                    <tr>
+                        <th class="th1">值</th>
+                        <th class="th2">描述</th>
+                    </tr>
+
+                    <tr>
+                        <td>normal</td>
+                        <td style="white-space: normal">默认。空白会被浏览器忽略。a b c d</td>
+                    </tr>
+
+                    <tr>
+                        <td>pre</td>
+                        <td style="white-space: pre">空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签。a b c d</td>
+                    </tr>
+
+                    <tr>
+                        <td>nowrap</td>
+                        <td style="white-space: nowrap">文本不会换行，文本会在在同一行上继续，直到遇到 br 标签为止。a b c d</td>
+                    </tr>
+
+                    <tr>
+                        <td>pre-wrap</td>
+                        <td style="white-space: pre-wrap">保留空白符序列，但是正常地进行换行。a b c d
+                            pre 标签。
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>pre-line</td>
+                        <td style="white-space: pre-line">合并空白符序列，但是保留换行符。a b c d</td>
+                    </tr>
+
+                    <tr>
+                        <td>inherit</td>
+                        <td style="white-space: inherit">规定应该从父元素继承 white-space 属性的值。a b c d</td>
+                    </tr>
+                </table>
+            </li>
+        </ol>
+    </li>
+    <li>列举出常见的CSS的字体属性</li>
+    <li>用背景图片的方式为页面的元素增加一张图片，图片元素不限</li>
+</ol>
+</body>
+</html>
